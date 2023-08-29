@@ -1,7 +1,6 @@
 import {
   ChevronUpDownIcon,
 } from "@heroicons/react/24/outline"
-import { UserPlusIcon } from "@heroicons/react/24/solid"
 import {
   Card,
   CardHeader,
@@ -25,29 +24,21 @@ export function SortableTable(props: { users: any[] }) {
   const tableData: User[] = props.users ? props.users[0] : undefined
 
   return (
-    <Card className="h-full w-4/6">
+    <Card className="h-full w-4/6 mb-24">
       <CardHeader floated={false} shadow={false} className="rounded-none">
-        <div className="mb-8 flex items-center justify-between gap-8">
-          <div>
+        <div className="mb-8 flex items-center justify-center gap-8">
+          <div className="flex flex-col items-center">
             <Typography variant="h5" color="blue-gray">
-              Members list
+              User list
             </Typography>
             <Typography color="gray" className="mt-1 font-normal">
-              See information about all members
+              See information about all users
             </Typography>
           </div>
-          {/* <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-            <Button variant="outlined" size="sm">
-              view all
-            </Button>
-            <Button className="flex items-center gap-3" size="sm">
-              <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add member
-            </Button>
-          </div> */}
         </div>
       </CardHeader>
       <CardBody className="overflow-scroll px-0">
-        <table className="mt-4 w-full min-w-max table-auto text-left">
+        <table className="w-full min-w-max table-auto text-left">
           <thead>
             <tr>
               {TABLE_HEAD.map((head, index) => (
@@ -141,7 +132,7 @@ export function SortableTable(props: { users: any[] }) {
           </tbody>
         </table>
       </CardBody>
-      {/* <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
         <Typography variant="small" color="blue-gray" className="font-normal">
           Page 1 of 10
         </Typography>
@@ -153,7 +144,7 @@ export function SortableTable(props: { users: any[] }) {
             Next
           </Button>
         </div>
-      </CardFooter> */}
+      </CardFooter>
     </Card>
   )
 }

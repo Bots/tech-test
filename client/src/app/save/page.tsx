@@ -3,27 +3,24 @@
 import { NavbarDefault } from "@/components/Navbar"
 import { HeroSection } from "@/components/Hero"
 import { SortableTable } from "@/components/Table"
-import { useState } from "react"
+import { useStore } from "../store"
+import { Spinner } from "@material-tailwind/react"
+import { useEffect } from "react"
 
 const Save = () => {
-  
-  type User = {
-    id: number
-    name: string
-    company: any
-    email: string
-    phone: string
-  }
 
-  const [users, setUsers] = useState<User[]>([])
+  const users = useStore((state: any) => state.users)
+  const isLoading = useStore((state: any) => state.isLoading)
 
-  console.log(users)
+  useEffect(() => {
+    useStore.persist.rehydrate()
+  }, [])
 
   return (
     <div className="flex flex-col items-center">
       <NavbarDefault />
-      <HeroSection />
-      <SortableTable users={users}/>
+      <HeroSection page="save"/>
+      {isLoading ? <Spinner /> : <SortableTable users={users} />}
     </div>
   )
 }

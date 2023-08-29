@@ -3,21 +3,14 @@
 import { NavbarDefault } from "@/components/Navbar"
 import { HeroSection } from "@/components/Hero"
 import { SortableTable } from "@/components/Table"
-import { useBoundStore } from "./store"
+import { useStore } from "./store"
 import { Spinner } from "@material-tailwind/react"
 
 const Home = () => {
-  // const { users, setUsers } = useBoundStore(
-  //   (state: { users: any }) => state.users
-  // )
-  // const { isLoading, setIsLoading } = useBoundStore(
-  //   (state: { isLoading: any }) => state.isLoading
-  // )
-
-  const users = useBoundStore((state) => state.users)
-  const setUsers = useBoundStore((state) => state.setUsers)
-  const isLoading = useBoundStore((state) => state.isLoading)
-  const setIsLoading = useBoundStore((state) => state.setIsLoading)
+  const users = useStore((state: any) => state.users)
+  const setUsers = useStore((state: any) => state.setUsers)
+  const isLoading = useStore((state: any) => state.isLoading)
+  const setIsLoading = useStore((state: any) => state.setIsLoading)
 
   const fetchData = async () => {
     setIsLoading(true)
@@ -35,7 +28,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center">
       <NavbarDefault />
-      <HeroSection
+      <HeroSection page="home"
         fetchData={() => {
           fetchData()
         }}

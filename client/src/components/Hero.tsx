@@ -1,4 +1,28 @@
-export function HeroSection(props) {
+import { MouseEventHandler } from "react"
+
+export function HeroSection(props: {
+  page: any
+  fetchData?: MouseEventHandler<HTMLButtonElement> | undefined
+}) {
+  let heroText = ""
+
+  switch (props.page) {
+    case "home":
+      heroText =
+        "Click the button below to send a GET request to the jsonplaceholder API, get the users, display them in a table, and commit them to the app state."
+      break
+    case "save":
+      heroText =
+        "This table has been populated using a state variable which stores the users. Click the button below to save this user data to the database."
+      break
+    case "fetch":
+      heroText =
+        "Click the button below to load the previously saved data from the database."
+      break
+    default:
+      heroText = "Something isn't quite right..."
+      break
+  }
 
   return (
     <div className="bg-black">
@@ -8,9 +32,7 @@ export function HeroSection(props) {
             FieldSync Technical Test
           </h1>
           <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
-            Click the button below to send a GET request to the jsonplaceholder
-            API, get the users, display them in a table, and commit them to the
-            app state.{" "}
+            {heroText}
           </p>
         </div>
         <div className="flex justify-center items-center">
