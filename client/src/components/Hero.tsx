@@ -1,27 +1,4 @@
-"use client"
-
-import { useEffect, useState } from "react"
-
-export function HeroSection() {
-  type User = {
-    id: number
-    name: string
-    company: string
-    email: string
-    phone: string
-  }
-
-  const [users, setUsers] = useState<User[]>([])
-
-  const fetchData = async () => {
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users")
-      const responseData = await res.json()
-      setUsers(responseData)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+export function HeroSection(props) {
 
   return (
     <div className="bg-black">
@@ -38,7 +15,7 @@ export function HeroSection() {
         </div>
         <div className="flex justify-center items-center">
           <button
-            onClick={fetchData}
+            onClick={props.fetchData}
             className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-indigo-700 py-2 sm:py-4 text-sm"
           >
             Download Users
