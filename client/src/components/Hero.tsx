@@ -9,7 +9,7 @@ export function HeroSection(props: {
   switch (props.page) {
     case "home":
       heroText =
-        "Click the button below to send a GET request to the jsonplaceholder API, get the users, display them in a table, and commit them to the app state."
+        "Click the button below to send a GET request to the jsonplaceholder API, get the users, display them in the table, and commit them to the app state."
       break
     case "save":
       heroText =
