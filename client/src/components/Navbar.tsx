@@ -37,7 +37,7 @@ export function NavbarDefault() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="/save" className="flex items-center">
           Save
         </a>
       </Typography>
@@ -47,7 +47,7 @@ export function NavbarDefault() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="/fetch" className="flex items-center">
           Fetch
         </a>
       </Typography>

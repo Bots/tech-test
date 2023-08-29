@@ -25,7 +25,7 @@ export function SortableTable(props: { users: any[] }) {
   const tableData: User[] = props.users ? props.users[0] : undefined
 
   return (
-    <Card className="h-full w-full">
+    <Card className="h-full w-4/6">
       <CardHeader floated={false} shadow={false} className="rounded-none">
         <div className="mb-8 flex items-center justify-between gap-8">
           <div>
@@ -36,14 +36,14 @@ export function SortableTable(props: { users: any[] }) {
               See information about all members
             </Typography>
           </div>
-          <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+          {/* <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
             <Button variant="outlined" size="sm">
               view all
             </Button>
             <Button className="flex items-center gap-3" size="sm">
               <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add member
             </Button>
-          </div>
+          </div> */}
         </div>
       </CardHeader>
       <CardBody className="overflow-scroll px-0">
@@ -141,7 +141,7 @@ export function SortableTable(props: { users: any[] }) {
           </tbody>
         </table>
       </CardBody>
-      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+      {/* <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
         <Typography variant="small" color="blue-gray" className="font-normal">
           Page 1 of 10
         </Typography>
@@ -153,7 +153,7 @@ export function SortableTable(props: { users: any[] }) {
             Next
           </Button>
         </div>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   )
 }
