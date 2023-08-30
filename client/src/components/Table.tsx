@@ -25,7 +25,6 @@ export function SortableTable(props: { users?: any[]; dbUsers?: any }) {
     tableData = props.dbUsers.data
   }
 
-  console.log("TABLEDATA", tableData)
   return (
     <Card className="h-full w-4/6 mb-24">
       <CardHeader floated={false} shadow={false} className="rounded-none">

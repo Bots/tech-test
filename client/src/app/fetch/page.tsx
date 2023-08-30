@@ -34,7 +34,6 @@ const Fetch = () => {
         .then((response) => response.json())
         .then((json) => {
           setUsers(json)
-          console.log(users)
           if (json.success) {
             toast.success("Data has been fetched from the database.", {
               position: "bottom-right",

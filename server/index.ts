@@ -16,7 +16,6 @@ app.get("/", (_req, res: Response) => {
 app.post("/api/v1/save", async (req: Request, res: Response) => {
   try {
     const allUsers = await prisma.user.findMany()
-    console.log(allUsers)
     req.body.forEach(async (element: any) => {
       const newUser = await prisma.user.create({
         data: {
