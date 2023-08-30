@@ -56,7 +56,7 @@ const Home = () => {
       <HeroSection
         page="home"
         fetchData={() => {
-          fetchData()
+          return fetchData()
         }}
       />
       {isLoading ? <Spinner /> : <SortableTable users={users} />}

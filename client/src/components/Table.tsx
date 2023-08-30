@@ -1,6 +1,4 @@
-import {
-  ChevronUpDownIcon,
-} from "@heroicons/react/24/outline"
+import { ChevronUpDownIcon } from "@heroicons/react/24/outline"
 import {
   Card,
   CardHeader,
@@ -19,10 +17,15 @@ type User = {
 }
 
 const TABLE_HEAD = ["ID", "Name", "Company", "Email", "Phone"]
+let tableData: User[] = []
+export function SortableTable(props: { users?: any[]; dbUsers?: any }) {
+  if (props.users) {
+    tableData = props.users ? props.users[0] : undefined
+  } else {
+    tableData = props.dbUsers.data
+  }
 
-export function SortableTable(props: { users: any[] }) {
-  const tableData: User[] = props.users ? props.users[0] : undefined
-
+  console.log("TABLEDATA", tableData)
   return (
     <Card className="h-full w-4/6 mb-24">
       <CardHeader floated={false} shadow={false} className="rounded-none">
